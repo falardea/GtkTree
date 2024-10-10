@@ -15,6 +15,8 @@ find_program(GLIB_COMPILE_RESOURCES NAMES glib-compile-resources REQUIRED)
 set(GRESOURCE_C     gtk_tree.gresource.c)
 set(GRESOURCE_XML   gtk_tree.gresource.xml)
 
+set(PROJECT_OWNER       "your-name-or-organization-here")
+set(PROJECT_URL        "https://github.com")
 set(PROJECT_TARGET      gtk_tree)
 set(PROJECT_SOURCE_DIR  ./src)
 set(PROJECT_BINARY_DIR  ./target)
