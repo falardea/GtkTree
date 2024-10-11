@@ -12,8 +12,6 @@ link_directories(${GTK3_LIBRARY_DIRS})
 add_definitions(${GTK3_CFLAGS_OTHER})
 
 find_program(GLIB_COMPILE_RESOURCES NAMES glib-compile-resources REQUIRED)
-set(GRESOURCE_C     gtk_tree.gresource.c)
-set(GRESOURCE_XML   gtk_tree.gresource.xml)
 
 set(PROJECT_OWNER       "your-name-or-organization-here")
 set(PROJECT_URL        "https://github.com")
@@ -27,6 +25,8 @@ set(PROJECT_RESOURCE_DIR    ${CMAKE_SOURCE_DIR}/resources)
 set(STYLE_DIR               ${PROJECT_RESOURCE_DIR}/style)
 set(SCSS_SOURCE             ${STYLE_DIR}/scss/gtk_tree_style.scss)
 set(CSS_OUTFILE             ${STYLE_DIR}/${CSS_TARGET})
+set(GRESOURCE_C             gtk_tree.gresource.c)
+set(GRESOURCE_XML           gtk_tree.gresource.xml)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR})
 
@@ -89,6 +89,8 @@ set(MY_SOURCES
     src/views/composites/one_button_acknowledge.h
     src/views/composites/two_button_popup_overlay.c
     src/views/composites/two_button_popup_overlay.h
+    src/headless_sandbox/headless_sandbox.c
+    src/headless_sandbox/headless_sandbox.h
 )
 
 include_directories(${PROJECT_SOURCE_DIR})
