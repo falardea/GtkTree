@@ -3,12 +3,29 @@
 
 window {
   //background-image: none;
+  padding: 20px;
+  border-radius: 20px;
+  border: $base-outline-color 5px solid;
   background-color: $base-bg;
   color: $light-base-bg;
 }
 .transparent_background{
   background-color: rgba(0, 0, 0, 0.15);
   background-image: none;
+}
+
+.brand-logo-primary
+{
+  //background-color: white;
+  background-image: url("resource:///resource_path/resources/images/brand_f_primary.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.brand-logo-secondary
+{
+  background-image: url("resource:///resource_path/resources/images/brand_f_secondary.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 box#overlay-popup-box
@@ -67,4 +84,15 @@ box#overlay-popup-box
     background-image: image(#faf9f8);
   }
 
+}
+
+treeview {
+  color: black;
+  background-color: $dark-sandbox-slate;
+  header > button {
+    color: $light-sandbox-slate;
+  }
+  :selected {
+    background-color: $selected-table-row;
+  }
 }

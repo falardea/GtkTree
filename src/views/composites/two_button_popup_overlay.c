@@ -25,7 +25,11 @@ void on_btn_accept_clicked(__attribute__((unused)) GtkButton *button, gpointer u
    logging_llprintf(LOGLEVEL_DEBUG, "%s", __func__);
 
    TwoButtonPopup *two_pop = (TwoButtonPopup *) user_data;
-   (* two_pop->user_return_callback)(GTK_RESPONSE_ACCEPT);
+   if (two_pop->user_return_callback != NULL)
+   {
+      (* two_pop->user_return_callback)(GTK_RESPONSE_ACCEPT);
+   }
+
    gtk_container_remove(GTK_CONTAINER(gtk_widget_get_parent(GTK_WIDGET(two_pop))), GTK_WIDGET(two_pop));
 }
 
@@ -34,7 +38,10 @@ void on_btn_reject_clicked(__attribute__((unused)) GtkButton *button, gpointer u
    logging_llprintf(LOGLEVEL_DEBUG, "%s", __func__);
 
    TwoButtonPopup *two_pop = (TwoButtonPopup *) user_data;
-   (* two_pop->user_return_callback)(GTK_RESPONSE_REJECT);
+   if (two_pop->user_return_callback != NULL)
+   {
+      (* two_pop->user_return_callback)(GTK_RESPONSE_REJECT);
+   }
    gtk_container_remove(GTK_CONTAINER(gtk_widget_get_parent(GTK_WIDGET(two_pop))), GTK_WIDGET(two_pop));
 }
 

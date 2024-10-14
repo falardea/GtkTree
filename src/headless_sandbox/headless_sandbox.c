@@ -14,7 +14,19 @@
 #define APPLICATION_URL                "Url"
 #define APPLICATION_VERSION_MMP        "Version"
 
-void run_console_context(void)
+
+__attribute__((unused)) void build_hash_table_and_print_it(void);
+
+void run_console_context(void) {
+
+   printf("\033[2J");
+   printf("\033[H");
+   g_print("doing something other than building a hash table, thank you\n");
+
+   // build_hash_table_and_print_it();
+}
+
+void build_hash_table_and_print_it(void)
 {
    logging_llprintf(LOGLEVEL_INFO, "%s", __func__);
 

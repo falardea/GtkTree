@@ -26,8 +26,47 @@ extern const int   LOGGING_MAX_MSG_LENGTH;
 typedef struct {
    GtkWidget   *w_msg_out_textview;
    GtkWidget   *w_say_something_entry;
-
+   GtkWidget   *w_do_something_button;
    GtkWidget   *w_home_page_overlay;
+
+   GtkWidget   *w_basic_items_combo;
+   GtkWidget   *w_timestamp_selection_combobox;
+
+   GtkWidget   *w_brand_logo;
+
+   GtkWidget   *w_trvwSamplesTable;
+   GObject     *g_trslctnSelectedSample;
+
+   GtkWidget   *w_tbtnEditSelection;
+   GtkWidget   *w_tbtnCreateRow;
+   GtkWidget   *w_tbtnDeleteRow;
+   GtkWidget   *w_ppvrAreYouSure;
+   GtkWidget   *w_lblPopoverAreYouSureMsg;
+   GtkWidget   *w_btnAreYouSureConfirm;
+   GtkWidget   *w_btnAreYouSureCancel;
+
+   GtkWidget   *w_editSampleDateTime;
+   GtkWidget   *w_lblSampleDate;
+   GtkWidget   *w_entrySampleHour;
+   GtkWidget   *w_entrySampleMinute;
+   // Popover Datepicker
+   GtkWidget   *w_ppvrDatepicker;
+   GtkWidget   *w_popCalendar;
+   GtkWidget   *w_popDone;
+   GtkWidget   *w_popCancel;
+
+   GtkWidget   *w_entryMeasurement1;
+   GtkWidget   *w_entryMeasurement2;
+   GtkWidget   *w_entryMeasurement3;
+   GtkWidget   *w_entryMeasurement4;
+
+   GtkWidget   *w_entryCalculationA;
+   GtkWidget   *w_entryCalculationB;
+
+   GtkWidget   *w_btnChangeRow;
+   GtkWidget   *w_btnCancelRowChange;
+
+
 } app_widget_ref_struct;
 
 extern app_widget_ref_struct *g_app_widget_refs;

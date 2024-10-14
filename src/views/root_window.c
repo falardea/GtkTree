@@ -1,6 +1,7 @@
 /**
  * @brief The implementation
  */
+#include <glib-2.0/glib.h>
 #include "root_window.h"
 #include "interfaces/app_interface.h"
 #include "utils/sys_interface.h"
@@ -49,7 +50,7 @@ static gboolean toggle_popup = true;
 void on_do_something_button_clicked(__attribute__((unused)) GtkButton *button, __attribute__((unused)) gpointer *user_data)
 {
    app_widget_ref_struct *wdgts = (app_widget_ref_struct *) user_data;
-   gchar text_entered_by_user[2048];
+   gchar text_entered_by_user[2047];
    gchar build_a_msg_out[2048];
 
    gboolean use_entered_text = (gtk_entry_buffer_get_length(gtk_entry_get_buffer(GTK_ENTRY(wdgts->w_say_something_entry))) > 0);
@@ -62,10 +63,8 @@ void on_do_something_button_clicked(__attribute__((unused)) GtkButton *button, _
       print_log_level_msgout(LOGLEVEL_INFO, "nothing to say?");
    }
 
-
-   snprintf(build_a_msg_out, sizeof(build_a_msg_out), "%s%s%s\n",
-            "This is a build-a-message popup, taking some 'inputs' from the parent, such as:\n",
-            "The user entered ", use_entered_text ? text_entered_by_user : "nothing in the text input");
+   snprintf(build_a_msg_out, sizeof(build_a_msg_out), "%s\n",
+            use_entered_text ? text_entered_by_user : "Nothing to do...\n");
    GtkWidget *popup;
    if (toggle_popup)
    {
@@ -87,6 +86,39 @@ void on_do_something_button_clicked(__attribute__((unused)) GtkButton *button, _
 
 }
 
+
+void on_timestamp_selection_combobox_changed(__attribute__((unused)) GtkComboBox *comboBox, __attribute__((unused)) gpointer user_data)
+{
+   GtkTreeIter tIter;
+   GValue current_selection = {0};
+
+   if (gtk_combo_box_get_active_iter(comboBox, &tIter))
+   {
+      GtkTreeModel *model = gtk_combo_box_get_model(comboBox);
+      gtk_tree_model_get_value(model, &tIter, 0, &current_selection);
+   }
+
+   logging_llprintf(LOGLEVEL_DEBUG, "%s",
+                    g_value_get_string(&current_selection) != NULL ? g_value_get_string(&current_selection) : "selection changed, but we didn't get a good reference for it");
+}
+
+void on_basic_items_combo_changed(__attribute__((unused)) GtkComboBox *comboBox, __attribute__((unused)) gpointer user_data)
+{
+   GtkTreeIter tIter;
+   GValue current_selection = {0};
+
+   if (gtk_combo_box_get_active_iter(comboBox, &tIter))
+   {
+      GtkTreeModel *model = gtk_combo_box_get_model(comboBox);
+      gtk_tree_model_get_value(model, &tIter, 0, &current_selection);
+   }
+
+   logging_llprintf(LOGLEVEL_DEBUG, "%s",
+                    g_value_get_string(&current_selection) != NULL ? g_value_get_string(&current_selection) : "selection changed, but we didn't get a good reference for it");
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void set_msgout_buffer(const char *msgout)
 {
    if (get_app_state() == APP_STATE_SUCCESS)

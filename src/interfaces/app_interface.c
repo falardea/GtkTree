@@ -7,6 +7,7 @@
 #include "utils/logging.h"
 #include "views/ui_builder.h"
 #include "views/css_styler.h"
+#include "views/composites/temp/ctrl_samples.h"
 
 const LOGLEVEL DEFAULT_APP_LOG_LEVEL = LOGLEVEL_INFO;
 
@@ -47,6 +48,9 @@ void app_init(int argc, char **argv) {
       g_app_widget_refs = app_builder();
 
       apply_app_styling(g_app_widget_refs);
+
+      load_sample_data_from_file();
+
    }
 
    set_app_state(APP_STATE_SUCCESS);

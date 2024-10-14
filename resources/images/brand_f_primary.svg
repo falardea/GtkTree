@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="130.2054mm"
+   height="175.82063mm"
+   viewBox="0 0 130.2054 175.82063"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.1 (9b9bdc1480, 2023-11-25, custom)"
+   sodipodi:docname="brand_f_primary.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.4824347"
+     inkscape:cx="262.21165"
+     inkscape:cy="724.45037"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showgrid="true">
+    <inkscape:grid
+       id="grid1"
+       units="mm"
+       originx="-32.423146"
+       originy="-50.698876"
+       spacingx="0.99999998"
+       spacingy="1"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-32.423146,-50.698876)">
+    <rect
+       style="fill:#04008e;fill-rule:evenodd;stroke:#000000;stroke-width:0.954917;stroke-linejoin:round;stroke-miterlimit:0;stroke-opacity:0"
+       id="rect1"
+       width="129.25049"
+       height="174.86572"
+       x="32.900604"
+       y="51.176334"
+       ry="10.585583" />
+    <path
+       style="fill:#04008e;fill-rule:evenodd;stroke:#fbe1e1;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1"
+       d="M 47.8943,131.85878 C 177.52986,73.046623 146.29412,51.089753 134.77474,62.803597 123.25536,74.517442 112.93619,248.0167 82.556841,205.51637 52.1775,163.01604 55.13326,161.43797 55.13326,161.43797 c 0,0 76.39708,7.54441 83.02926,-5.93861"
+       id="path1" />
+  </g>
+</svg>

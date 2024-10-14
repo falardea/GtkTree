@@ -91,6 +91,14 @@ set(MY_SOURCES
     src/views/composites/two_button_popup_overlay.h
     src/headless_sandbox/headless_sandbox.c
     src/headless_sandbox/headless_sandbox.h
+    src/views/composites/temp/model_samples.c
+    src/views/composites/temp/model_samples.h
+    src/views/composites/temp/view_samples.c
+    src/views/composites/temp/view_samples.h
+    src/views/view_utils.c
+    src/views/view_utils.h
+    src/views/composites/temp/ctrl_samples.c
+    src/views/composites/temp/ctrl_samples.h
 )
 
 include_directories(${PROJECT_SOURCE_DIR})
