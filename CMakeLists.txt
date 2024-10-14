@@ -99,6 +99,8 @@ set(MY_SOURCES
     src/views/view_utils.h
     src/views/composites/temp/ctrl_samples.c
     src/views/composites/temp/ctrl_samples.h
+      src/views/composites/temp/basic_combo_box.c
+      src/views/composites/temp/basic_combo_box.h
 )
 
 include_directories(${PROJECT_SOURCE_DIR})
