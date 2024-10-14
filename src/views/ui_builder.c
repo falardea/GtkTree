@@ -100,6 +100,10 @@ app_widget_ref_struct *app_builder(void) {
    gtk_list_store_append(combo_sample, &iter);
    gtk_list_store_set(combo_sample, &iter, 0, "Item 4", -1); // , 1, 56, 2, "7", -1);
 
+   GtkCellRenderer *combocell = gtk_cell_renderer_text_new ();
+   gtk_cell_layout_pack_start( GTK_CELL_LAYOUT(appWidgetsT->w_basic_items_combo), combocell, TRUE );
+   gtk_cell_layout_set_attributes( GTK_CELL_LAYOUT(appWidgetsT->w_basic_items_combo), combocell, "text", 0, NULL );
+
    gtk_combo_box_set_active(GTK_COMBO_BOX(appWidgetsT->w_basic_items_combo), 0);
    gtk_combo_box_set_active(GTK_COMBO_BOX(appWidgetsT->w_timestamp_selection_combobox), 0);
    gtk_combo_box_set_id_column(GTK_COMBO_BOX(appWidgetsT->w_basic_items_combo), 0);
@@ -107,5 +111,6 @@ app_widget_ref_struct *app_builder(void) {
    gtk_builder_connect_signals(builder, appWidgetsT);
 
    g_object_unref(builder);
+   g_object_unref(combo_sample);
    return appWidgetsT;
 }
