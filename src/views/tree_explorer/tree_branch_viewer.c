@@ -13,19 +13,19 @@ enum
    N_FIELD_COLS
 };
 
-GtkListStore *appTreeModel = NULL;
+GtkTreeStore *appTreeModel = NULL;
 
 static GtkTreeModel *create_and_build_app_tree_model(void)
 {
-   appTreeModel = gtk_list_store_new(N_FIELD_COLS, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_BOOLEAN);
+   appTreeModel = gtk_tree_store_new(N_FIELD_COLS, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_BOOLEAN);
 
    GtkTreeIter iter;
-   gtk_list_store_append(appTreeModel, &iter);  // create new row and move iterator to it
-   gtk_list_store_set(appTreeModel, &iter, FIELD_NAME, "Application Name", FIELD_VALUE, "GtkTree", FIELD_EDITABLE, FALSE, -1);
-   gtk_list_store_append(appTreeModel, &iter);
-   gtk_list_store_set(appTreeModel, &iter, FIELD_NAME, "Application Description", FIELD_VALUE, "A sandbox for testing GTK3 TreeModel and TreeView concepts", FIELD_EDITABLE, FALSE, -1);
-   gtk_list_store_append(appTreeModel, &iter);
-   gtk_list_store_set(appTreeModel, &iter, FIELD_NAME, "Version", FIELD_VALUE, "0.0.1", FIELD_EDITABLE, TRUE, -1);
+   gtk_tree_store_append(appTreeModel, &iter, NULL);  // create new row and move iterator to it
+   gtk_tree_store_set(appTreeModel, &iter, FIELD_NAME, "Application Name", FIELD_VALUE, "GtkTree", FIELD_EDITABLE, FALSE, -1);
+   gtk_tree_store_append(appTreeModel, &iter, NULL);
+   gtk_tree_store_set(appTreeModel, &iter, FIELD_NAME, "Application Description", FIELD_VALUE, "A sandbox for testing GTK3 TreeModel and TreeView concepts", FIELD_EDITABLE, TRUE, -1);
+   gtk_tree_store_append(appTreeModel, &iter, NULL);
+   gtk_tree_store_set(appTreeModel, &iter, FIELD_NAME, "Version", FIELD_VALUE, "0.0.1", FIELD_EDITABLE, FALSE, -1);
 
    return GTK_TREE_MODEL(appTreeModel);
 }
@@ -37,13 +37,13 @@ void cell_boolean_formatter(__attribute__((unused)) GtkTreeViewColumn   *col,
                            __attribute__((unused)) gpointer            user_data)
 {
    gboolean enabled;
-   GdkRGBA redColor = {255.0, 0.0, 0.0, 0.5};
+   GdkRGBA redColor = {255.0, 0.0, 0.0, 1.0};
    GdkRGBA greenColor = {0.0, 255.0, 0.0, 1.0};
 
    gtk_tree_model_get(model, rowCursor, 2, &enabled, -1);
 
    g_object_set(renderer, "text", enabled ? "enabled":"disabled",
-                "cell-background", enabled ? "green":"red", NULL);
+                "cell-background-rgba", enabled ? &greenColor:&redColor, NULL);
 }
 
 void create_app_tree_viewer_with_model(app_widget_ref_struct *wdgts)
