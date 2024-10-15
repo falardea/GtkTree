@@ -32,6 +32,11 @@ static GtkTreeModel *create_and_build_app_tree_model(void)
    gtk_tree_store_append(appTreeModel, &iter, &root);
    gtk_tree_store_set(appTreeModel, &iter, FIELD_NAME, "Version", FIELD_VALUE, "0.0.1", FIELD_EDITABLE, FALSE, -1);
 
+
+   gtk_tree_store_append(appTreeModel, &iter, NULL);
+   gtk_tree_store_set(appTreeModel, &iter, FIELD_NAME, "Temperature Control", FIELD_VALUE, "TreeModelRoot", FIELD_EDITABLE, FALSE, -1);
+
+
    return GTK_TREE_MODEL(appTreeModel);
 }
 
