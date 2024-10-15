@@ -102,20 +102,7 @@ void on_timestamp_selection_combobox_changed(__attribute__((unused)) GtkComboBox
                     g_value_get_string(&current_selection) != NULL ? g_value_get_string(&current_selection) : "selection changed, but we didn't get a good reference for it");
 }
 
-void on_basic_items_combo_changed(__attribute__((unused)) GtkComboBox *comboBox, __attribute__((unused)) gpointer user_data)
-{
-   GtkTreeIter tIter;
-   GValue current_selection = {0};
 
-   if (gtk_combo_box_get_active_iter(comboBox, &tIter))
-   {
-      GtkTreeModel *model = gtk_combo_box_get_model(comboBox);
-      gtk_tree_model_get_value(model, &tIter, 0, &current_selection);
-   }
-
-   logging_llprintf(LOGLEVEL_DEBUG, "%s",
-                    g_value_get_string(&current_selection) != NULL ? g_value_get_string(&current_selection) : "selection changed, but we didn't get a good reference for it");
-}
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

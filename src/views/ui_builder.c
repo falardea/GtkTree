@@ -40,6 +40,8 @@ app_widget_ref_struct *app_builder(void) {
 
    GET_WIDGET(brand_logo);
 
+   GET_WIDGET(model_viewers);
+
    GET_WIDGET(trvwSamplesTable);
    GET_OBJECT(trslctnSelectedSample);
 

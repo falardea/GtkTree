@@ -34,6 +34,8 @@ typedef struct {
 
    GtkWidget   *w_brand_logo;
 
+   GtkWidget   *w_model_viewers;
+
    GtkWidget   *w_trvwSamplesTable;
    GObject     *g_trslctnSelectedSample;
 
