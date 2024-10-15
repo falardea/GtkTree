@@ -1,17 +1,4 @@
 /**
- * @file basic_combo_box.c
- *
- * @copyright
- * COPYRIGHT 2024
- * DEKA RESEARCH AND DEVELOPMENT CORPORATION
- *
- * Contains confidential and proprietary information which
- * may not be copied, disclosed or used by others except as expressly
- * authorized in writing by DEKA Research & Development Corporation.
- *
- * @critical <Minor, Moderate, Major Single-Point, Major Multi-Point>
- * @brief <brief description of the file>
- * @subsystem <subsystem name>
  */
 #include <gtk/gtk.h>
 #include "basic_combo_box.h"
@@ -33,8 +20,8 @@ typedef struct BasicCombo_I2Str
 
 BasicCombo_I2Str bcb_items[BASIC_COMBO_N_SELECTIONS] =
       {
-            {BASIC_COMBO_SELECTION_0, "Samples Table"},
-            {BASIC_COMBO_SELECTION_1, "Tree Explorer"},
+            {BASIC_COMBO_SELECTION_0, "Tree Explorer"},
+            {BASIC_COMBO_SELECTION_1, "Samples Table"},
             {BASIC_COMBO_SELECTION_2, "Empty"},
             {BASIC_COMBO_SELECTION_3, "Empty"},
       };
@@ -65,6 +52,8 @@ void build_basic_combo_box(app_widget_ref_struct *wdgts)
 
    gtk_combo_box_set_active(GTK_COMBO_BOX(wdgts->w_basic_items_combo), 0);
    gtk_combo_box_set_id_column(GTK_COMBO_BOX(wdgts->w_basic_items_combo), 0);
+
+
 
    /////////////////////////////////////////////////////////////////////////////
    g_object_unref(combo_sample);

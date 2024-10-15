@@ -8,6 +8,7 @@
 #include "views/composites/temp/view_samples.h"
 #include "views/composites/temp/model_samples.h"
 #include "views/composites/temp/basic_combo_box.h"
+#include "views/tree_explorer/tree_branch_viewer.h"
 
 #define GET_WIDGET(wdgt)   appWidgetsT->w_##wdgt = GTK_WIDGET(gtk_builder_get_object(builder, #wdgt))
 #define GET_OBJECT(wdgt)   appWidgetsT->g_##wdgt = G_OBJECT(gtk_builder_get_object(builder, #wdgt))
@@ -41,6 +42,13 @@ app_widget_ref_struct *app_builder(void) {
    GET_WIDGET(brand_logo);
 
    GET_WIDGET(model_viewers);
+
+   GET_WIDGET(samples_page);
+   GET_WIDGET(tree_explorer);
+   GET_WIDGET(tree_branch_view);
+   GET_WIDGET(tree_leaf_view);
+   GET_WIDGET(empty_viewer);
+   GET_OBJECT(trslctnSelectedTreeBranch);
 
    GET_WIDGET(trvwSamplesTable);
    GET_OBJECT(trslctnSelectedSample);
@@ -85,6 +93,12 @@ app_widget_ref_struct *app_builder(void) {
    gtk_combo_box_set_active(GTK_COMBO_BOX(appWidgetsT->w_timestamp_selection_combobox), 0);
 
    build_basic_combo_box(appWidgetsT);
+
+   gtk_stack_set_visible_child(GTK_STACK(appWidgetsT->w_model_viewers),
+                               gtk_stack_get_child_by_name(GTK_STACK(appWidgetsT->w_model_viewers), "Tree Explorer"));
+
+   create_app_tree_viewer_with_model(appWidgetsT);
+
 
    gtk_builder_connect_signals(builder, appWidgetsT);
 

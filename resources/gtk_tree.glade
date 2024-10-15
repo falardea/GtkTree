@@ -178,6 +178,48 @@
                     <property name="can_focus">False</property>
                     <property name="transition_type">crossfade</property>
                     <child>
+                      <object class="GtkPaned" id="tree_explorer">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="wide_handle">True</property>
+                        <child>
+                          <object class="GtkTreeView" id="tree_branch_view">
+                            <property name="width_request">150</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="enable_grid_lines">both</property>
+                            <child internal-child="selection">
+                              <object class="GtkTreeSelection" id="trslctnSelectedTreeBranch">
+                                <signal name="changed" handler="on_trslctnSelectedTreeBranch_changed" swapped="no"/>
+                              </object>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="resize">False</property>
+                            <property name="shrink">True</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkBox" id="tree_leaf_view">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="orientation">vertical</property>
+                            <child>
+                              <placeholder/>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="resize">True</property>
+                            <property name="shrink">True</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="name">Tree Explorer</property>
+                        <property name="title" translatable="yes">Tree Explorer</property>
+                      </packing>
+                    </child>
+                    <child>
                       <object class="GtkBox" id="samples_page">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -204,7 +246,7 @@
                                     <property name="enable_grid_lines">both</property>
                                     <property name="enable_tree_lines">True</property>
                                     <child internal-child="selection">
-                                      <object class="GtkTreeSelection">
+                                      <object class="GtkTreeSelection" id="trslctnSelectedSample">
                                         <signal name="changed" handler="on_sample_selection_changed" swapped="no"/>
                                       </object>
                                     </child>
@@ -501,6 +543,7 @@
                                                 <property name="can_focus">False</property>
                                                 <property name="label" translatable="yes">Measurement 1:</property>
                                                 <property name="justify">right</property>
+                                                <property name="ellipsize">end</property>
                                                 <property name="width_chars">15</property>
                                                 <property name="xalign">1</property>
                                               </object>
@@ -947,50 +990,11 @@
                       <packing>
                         <property name="name">Samples Table</property>
                         <property name="title" translatable="yes">Samples Table</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkPaned" id="tree_explorer">
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <child>
-                          <object class="GtkTreeView" id="tree_branch_view">
-                            <property name="width_request">150</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="enable_grid_lines">both</property>
-                            <child internal-child="selection">
-                              <object class="GtkTreeSelection"/>
-                            </child>
-                          </object>
-                          <packing>
-                            <property name="resize">False</property>
-                            <property name="shrink">True</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkBox" id="tree_leaf_view">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="orientation">vertical</property>
-                            <child>
-                              <placeholder/>
-                            </child>
-                          </object>
-                          <packing>
-                            <property name="resize">True</property>
-                            <property name="shrink">True</property>
-                          </packing>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="name">Tree Explorer</property>
-                        <property name="title" translatable="yes">Tree Explorer</property>
                         <property name="position">1</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkBox" id="empty_stack_page">
+                      <object class="GtkBox" id="empty_viewer">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="orientation">vertical</property>
@@ -1005,8 +1009,8 @@
                         </child>
                       </object>
                       <packing>
-                        <property name="name">Empty</property>
-                        <property name="title" translatable="yes">Empty</property>
+                        <property name="name">page0</property>
+                        <property name="title" translatable="yes">page0</property>
                         <property name="position">2</property>
                       </packing>
                     </child>

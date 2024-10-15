@@ -101,6 +101,10 @@ set(MY_SOURCES
     src/views/composites/temp/ctrl_samples.h
       src/views/composites/temp/basic_combo_box.c
       src/views/composites/temp/basic_combo_box.h
+      src/views/tree_explorer/tree_branch_viewer.c
+      src/views/tree_explorer/tree_branch_viewer.h
+      src/views/tree_explorer/tree_leaf_viewer.c
+      src/views/tree_explorer/tree_leaf_viewer.h
 )
 
 include_directories(${PROJECT_SOURCE_DIR})

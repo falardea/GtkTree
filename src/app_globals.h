@@ -35,9 +35,17 @@ typedef struct {
    GtkWidget   *w_brand_logo;
 
    GtkWidget   *w_model_viewers;
+   GtkWidget   *w_samples_page;
+   GtkWidget   *w_tree_explorer;
+   GtkWidget   *w_tree_branch_view;
+   GtkWidget   *w_tree_leaf_view;
+   GtkWidget   *w_empty_viewer;
+   GObject     *g_trslctnSelectedTreeBranch;
 
    GtkWidget   *w_trvwSamplesTable;
    GObject     *g_trslctnSelectedSample;
+
+
 
    GtkWidget   *w_tbtnEditSelection;
    GtkWidget   *w_tbtnCreateRow;
