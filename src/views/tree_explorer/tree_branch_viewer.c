@@ -19,12 +19,17 @@ static GtkTreeModel *create_and_build_app_tree_model(void)
 {
    appTreeModel = gtk_tree_store_new(N_FIELD_COLS, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_BOOLEAN);
 
-   GtkTreeIter iter;
-   gtk_tree_store_append(appTreeModel, &iter, NULL);  // create new row and move iterator to it
+   GtkTreeIter iter, root;
+
+   gtk_tree_store_append(appTreeModel, &iter, NULL);
+   gtk_tree_store_set(appTreeModel, &iter, FIELD_NAME, "tree root", FIELD_VALUE, "TreeModelRoot", FIELD_EDITABLE, FALSE, -1);
+   gtk_tree_model_get_iter_first(GTK_TREE_MODEL(appTreeModel), &root);
+
+   gtk_tree_store_append(appTreeModel, &iter, &root);  // create new row and move iterator to it
    gtk_tree_store_set(appTreeModel, &iter, FIELD_NAME, "Application Name", FIELD_VALUE, "GtkTree", FIELD_EDITABLE, FALSE, -1);
-   gtk_tree_store_append(appTreeModel, &iter, NULL);
+   gtk_tree_store_append(appTreeModel, &iter, &root);
    gtk_tree_store_set(appTreeModel, &iter, FIELD_NAME, "Application Description", FIELD_VALUE, "A sandbox for testing GTK3 TreeModel and TreeView concepts", FIELD_EDITABLE, TRUE, -1);
-   gtk_tree_store_append(appTreeModel, &iter, NULL);
+   gtk_tree_store_append(appTreeModel, &iter, &root);
    gtk_tree_store_set(appTreeModel, &iter, FIELD_NAME, "Version", FIELD_VALUE, "0.0.1", FIELD_EDITABLE, FALSE, -1);
 
    return GTK_TREE_MODEL(appTreeModel);
