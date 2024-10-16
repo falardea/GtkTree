@@ -105,6 +105,8 @@ set(MY_SOURCES
       src/views/tree_explorer/tree_branch_viewer.h
       src/views/tree_explorer/tree_leaf_viewer.c
       src/views/tree_explorer/tree_leaf_viewer.h
+      src/views/composites/setup_menu_line.c
+      src/views/composites/setup_menu_line.h
 )
 
 include_directories(${PROJECT_SOURCE_DIR})

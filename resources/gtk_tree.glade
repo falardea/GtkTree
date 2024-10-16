@@ -178,6 +178,29 @@
                     <property name="can_focus">False</property>
                     <property name="transition_type">crossfade</property>
                     <child>
+                      <object class="GtkScrolledWindow" id="list_page">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="shadow_type">in</property>
+                        <child>
+                          <object class="GtkViewport">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkListBox" id="listbox_row_container">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="name">ListBox Page</property>
+                        <property name="title" translatable="yes">ListBox Page</property>
+                      </packing>
+                    </child>
+                    <child>
                       <object class="GtkPaned" id="tree_explorer">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -217,6 +240,7 @@
                       <packing>
                         <property name="name">Tree Explorer</property>
                         <property name="title" translatable="yes">Tree Explorer</property>
+                        <property name="position">1</property>
                       </packing>
                     </child>
                     <child>
@@ -990,7 +1014,7 @@
                       <packing>
                         <property name="name">Samples Table</property>
                         <property name="title" translatable="yes">Samples Table</property>
-                        <property name="position">1</property>
+                        <property name="position">2</property>
                       </packing>
                     </child>
                     <child>
@@ -1001,17 +1025,11 @@
                         <child>
                           <placeholder/>
                         </child>
-                        <child>
-                          <placeholder/>
-                        </child>
-                        <child>
-                          <placeholder/>
-                        </child>
                       </object>
                       <packing>
-                        <property name="name">page0</property>
-                        <property name="title" translatable="yes">page0</property>
-                        <property name="position">2</property>
+                        <property name="name">Empty</property>
+                        <property name="title" translatable="yes">Empty</property>
+                        <property name="position">3</property>
                       </packing>
                     </child>
                   </object>

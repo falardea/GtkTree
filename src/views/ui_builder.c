@@ -9,6 +9,7 @@
 #include "views/composites/temp/model_samples.h"
 #include "views/composites/temp/basic_combo_box.h"
 #include "views/tree_explorer/tree_branch_viewer.h"
+#include "views/composites/setup_menu_line.h"
 
 #define GET_WIDGET(wdgt)   appWidgetsT->w_##wdgt = GTK_WIDGET(gtk_builder_get_object(builder, #wdgt))
 #define GET_OBJECT(wdgt)   appWidgetsT->g_##wdgt = G_OBJECT(gtk_builder_get_object(builder, #wdgt))
@@ -49,6 +50,10 @@ app_widget_ref_struct *app_builder(void) {
    GET_WIDGET(tree_leaf_view);
    GET_WIDGET(empty_viewer);
    GET_OBJECT(trslctnSelectedTreeBranch);
+
+   GET_WIDGET(listbox_row_container);
+   GET_WIDGET(listbox_item_1);
+   GET_WIDGET(listbox_item_2);
 
    GET_WIDGET(trvwSamplesTable);
    GET_OBJECT(trslctnSelectedSample);
@@ -94,11 +99,16 @@ app_widget_ref_struct *app_builder(void) {
 
    build_basic_combo_box(appWidgetsT);
 
-   gtk_stack_set_visible_child(GTK_STACK(appWidgetsT->w_model_viewers),
-                               gtk_stack_get_child_by_name(GTK_STACK(appWidgetsT->w_model_viewers), "Tree Explorer"));
-
    create_app_tree_viewer_with_model(appWidgetsT);
 
+   GtkWidget *sml = setup_menu_line_new("A dummy setup menu", NULL, NULL, appWidgetsT);
+   logging_llprintf(LOGLEVEL_DEBUG, "%s", __func__);
+   gtk_list_box_insert(GTK_LIST_BOX(appWidgetsT->w_listbox_row_container), sml, 0);
+
+
+
+   gtk_stack_set_visible_child(GTK_STACK(appWidgetsT->w_model_viewers),
+                               gtk_stack_get_child_by_name(GTK_STACK(appWidgetsT->w_model_viewers), "ListBox Page"));
 
    gtk_builder_connect_signals(builder, appWidgetsT);
 

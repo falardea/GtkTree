@@ -42,6 +42,10 @@ typedef struct {
    GtkWidget   *w_empty_viewer;
    GObject     *g_trslctnSelectedTreeBranch;
 
+   GtkWidget   *w_listbox_row_container;
+   GtkWidget   *w_listbox_item_1;
+   GtkWidget   *w_listbox_item_2;
+
    GtkWidget   *w_trvwSamplesTable;
    GObject     *g_trslctnSelectedSample;
 

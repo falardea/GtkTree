@@ -4,6 +4,7 @@
         <file preprocess="xml-stripblanks">resources/gtk_tree.glade</file>
         <file preprocess="xml-stripblanks">resources/one_button_acknowledge.glade</file>
         <file preprocess="xml-stripblanks">resources/two_button_popup.glade</file>
+        <file preprocess="xml-stripblanks">resources/setup_menu_line.glade</file>
         <file>resources/images/brand_f_primary.svg</file>
         <file>resources/images/brand_f_secondary.svg</file>
         <file>resources/style/gtk_tree_style.css</file>

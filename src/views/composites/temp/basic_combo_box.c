@@ -20,9 +20,9 @@ typedef struct BasicCombo_I2Str
 
 BasicCombo_I2Str bcb_items[BASIC_COMBO_N_SELECTIONS] =
       {
-            {BASIC_COMBO_SELECTION_0, "Tree Explorer"},
-            {BASIC_COMBO_SELECTION_1, "Samples Table"},
-            {BASIC_COMBO_SELECTION_2, "Empty"},
+            {BASIC_COMBO_SELECTION_0, "ListBox Page"},
+            {BASIC_COMBO_SELECTION_1, "Tree Explorer"},
+            {BASIC_COMBO_SELECTION_2, "Samples Table"},
             {BASIC_COMBO_SELECTION_3, "Empty"},
       };
 
